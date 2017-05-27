@@ -40,20 +40,48 @@ class MainWindow(QMainWindow):
 
         # Since this is the QSqlRelationalTableModel, it shows the entire table
         model.setHeaderData(0, Qt.Horizontal, "BranchID")
-        model.setHeaderData(1, Qt.Horizontal, "BranchName")
+        #model.setHeaderData(1, Qt.Horizontal, "LineID")
         model.setHeaderData(2, Qt.Horizontal, "FromBus")
         model.setHeaderData(3, Qt.Horizontal, "ToBus")
+        model.setHeaderData(4, Qt.Horizontal, "ckt")
+        model.setHeaderData(5, Qt.Horizontal, "BranchName")
         model.select()
 
         # Create View
         view = self.ui.tableView
         view.setModel(model)
         # Hide columns I don't care about
-        view.setColumnHidden(4, True)
-        view.setColumnHidden(5, True)
-        view.setItemDelegate(QSqlRelationalDelegate(view))
+        view.setColumnHidden(1, True)
+        view.setItemDelegate(MyDelegate(view))
 
         view.show()
+
+
+class MyDelegate(QSqlRelationalDelegate):
+    def __init__(self, parent=None):
+        super(MyDelegate, self).__init__()
+
+    def createEditor(self, parent, option, index):
+        """
+        Create combobox based on which branch is selected.  This is a result of a query,
+        but I'm not sure the best way to run the query.
+        """
+        if index.column() in (2,3):
+            combo = QComboBox(parent)
+            model = combo.model()
+            item = QStandardItem('Bubba')
+            model.appendRow(item)
+            item = QStandardItem('Gump')
+            model.appendRow(item)
+            item = QStandardItem('Shrimp')
+            model.appendRow(item)
+            item = QStandardItem('Grits')
+            model.appendRow(item)
+            combo.setModel(model)
+            return combo
+        else:
+            # For every other column use the normal method
+            return super(MyDelegate, self).createEditor(parent, option, index)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

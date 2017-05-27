@@ -1,59 +1,64 @@
 """
 Make an example database.  
+
+Remember the FOREIGN KEY constraints are only enforced if the 'PRAGMA foreign_keys;' is run on every
+connection.
 """
 import sqlite3
-conn = sqlite3.connect('example.sqlite')
+import os
+import os.path as osp
 
-conn.execute("""\
+db = 'example.sqlite'
+if osp.exists(db):
+    os.remove(db)
+conn = sqlite3.connect(db)
+
+sql = """\
 CREATE TABLE IF NOT EXISTS bus (
 BusID INTEGER PRIMARY KEY,
 BusNum INTEGER,
 BusName VARCHAR(255)
 );
-""")
 
-conn.execute("""\
-CREATE TABLE IF NOT EXISTS branch (
-BranchID INTEGER PRIMARY KEY,
-LineID INTEGER,
-FromBusID INTEGER,
-ToBusID INTEGER,
-ckt VARCHAR(2),
-BranchName VARCHAR(255),
-FOREIGN KEY (FromBusID) REFERENCES bus(BusID),
-FOREIGN KEY (ToBusID) REFERENCES bus(BusID),
-FOREIGN KEY (LineID) REFERENCES line(LineID)
-);
-""")
-
-conn.execute("""\
 CREATE TABLE IF NOT EXISTS line (
 LineID INTEGER PRIMARY KEY,
 LineName VARCHAR(255)
 );
-""")
 
-sql = """
+CREATE TABLE IF NOT EXISTS branch (
+BranchID INTEGER PRIMARY KEY,
+LineID INTEGER NOT NULL,
+FromBusID INTEGER NOT NULL,
+ToBusID INTEGER NOT NULL,
+ckt VARCHAR(2),
+BranchName VARCHAR(255),
+FOREIGN KEY(LineID) REFERENCES line(LineID),
+FOREIGN KEY(FromBusID) REFERENCES bus(BusID),
+FOREIGN KEY(ToBusID) REFERENCES bus(BusID)
+);
+
+PRAGMA foreign_keys = ON;
+
 INSERT INTO bus(BusID, BusNum, BusName)
-VALUES (1, 101, 'Bubba');
+VALUES (11, 1001, 'Bubba');
 INSERT INTO bus(BusID, BusNum, BusName)
-VALUES (2, 102, 'Gump');
+VALUES (12, 1002, 'Gump');
 INSERT INTO bus(BusID, BusNum, BusName)
-VALUES (3, 103, 'Shrimp');
+VALUES (13, 1003, 'Shrimp');
 INSERT INTO bus(BusID, BusNum, BusName)
-VALUES (4, 104, 'Grits');
+VALUES (14, 1004, 'Grits');
 
 INSERT INTO line (LineID, LineName)
-VALUES (1, 'Bubba - Shrimp');
+VALUES (11, 'Bubba - Shrimp');
 INSERT INTO line (LineID, LineName)
-VALUES (2, 'Shrimp - Grits');
+VALUES (12, 'Shrimp - Grits');
 
 INSERT INTO branch (BranchID, LineID, FromBusID, ToBusID, ckt, BranchName)
-VALUES (1, 1, 1, 2, '1',  'Bubba - Gump');
+VALUES (11, 11, 11, 12, '1',  'Bubba - Gump');
 INSERT INTO branch (BranchID, LineID, FromBusID, ToBusID, ckt, BranchName)
-VALUES (2, 1, 2, 3, '1',  'Gump - Shrimp');
+VALUES (12, 11, 12, 13, '1',  'Gump - Shrimp');
 INSERT INTO branch (BranchID, LineID, FromBusID, ToBusID, ckt, BranchName)
-VALUES (3, 2, 3, 4, '1',  'Shrimp - Grits');
+VALUES (13, 12, 13, 14, '1',  'Shrimp - Grits');
 """
 
 for s in sql.split(';'):
