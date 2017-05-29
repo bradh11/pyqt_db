@@ -26,7 +26,7 @@ LineName VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS branch (
-BranchID INTEGER PRIMARY KEY,
+BranchID INTEGER PRIMARY KEY AUTOINCREMENT,
 LineID INTEGER NOT NULL,
 FromBusID INTEGER NOT NULL,
 ToBusID INTEGER NOT NULL,
@@ -42,6 +42,7 @@ EquipmentID INTEGER PRIMARY KEY,
 BranchID INTEGER NOT NULL,
 BusID INTEGER NOT NULL,
 EquipmentName VARCHAR(255),
+IsNew INTEGER,
 FOREIGN KEY(BranchID) REFERENCES branch(BranchID),
 FOREIGN KEY(BusID) REFERENCES bus(BusID)
 );
@@ -77,23 +78,23 @@ VALUES (12, 11, 12, 13, '1',  'Gump - Shrimp');
 INSERT INTO branch (BranchID, LineID, FromBusID, ToBusID, ckt, BranchName)
 VALUES (13, 12, 13, 14, '1',  'Shrimp - Grits');
 
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (1, 11, 11, 'Switch');
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (2, 11, 11, 'Breaker');
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (3, 11, 11, 'CT');
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (4, 11, 11, 'Wavetrap');
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (1, 11, 11, 'Switch', 0);
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (2, 11, 11, 'Breaker', 0);
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (3, 11, 11, 'CT', 0);
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (4, 11, 11, 'Wavetrap', 0);
 
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (5, 11, 12, 'Switch');
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (6, 11, 12, 'Breaker');
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (7, 11, 12, 'CT');
-INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName)
-VALUES (8, 11, 12, 'Wavetrap');
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (5, 11, 12, 'Switch', 0);
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (6, 11, 12, 'Breaker', 0);
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (7, 11, 12, 'CT', 0);
+INSERT into equipment (EquipmentID, BranchID, BusID, EquipmentName, IsNew)
+VALUES (8, 11, 12, 'Wavetrap', 0);
 """
 
 for s in sql.split(';'):

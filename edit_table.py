@@ -1,11 +1,16 @@
 """
+This continues the filter_table.py example and adds comboboxes to edit
+some of the fields
+
 Somewhat complex view of a query with some filters.
+This example also allows editing of some data in the table.
 
-This does a couple cool things building on previous example:
- - Use a nice auto-completing combobox
- - Filter the table view by the value in a combobox
+We should be able to edit:
+  - FromBus, ToBus, BranchID
 
-All of this is bound to sql queries
+Values should be restricted to values currently associated with the Line.
+
+Also add copy/delete rows.  (Maybe make new rows a different color?)
 """
 import sql_example_ui
 from PyQt5.QtCore import (Qt, QSortFilterProxyModel, QModelIndex)
@@ -66,6 +71,46 @@ class MainWindow(QMainWindow):
         self.ui.selectLine.currentIndexChanged.connect(self.refresh_table)
         self.ui.filterBranch.currentIndexChanged.connect(self.refresh_table)
         self.ui.filterBus.currentIndexChanged.connect(self.refresh_table)
+        self.ui.copyButton.clicked.connect(self.copy_row)
+        self.ui.deleteButton.clicked.connect(self.delete_row)
+
+    def copy_row(self):
+        # Which row is selected
+        idxs = self.ui.tableView.selectionModel().selectedRows()
+        if len(idxs) != 1:
+            return
+        else:
+            index = idxs[0]
+        BranchID = self.ui.tableView.model().data(index)
+
+        # Get selected BranchID
+        sql = dedent("""\
+            INSERT INTO branch (BranchID, LineID, FromBusID, ToBusID, ckt, BranchName) 
+            SELECT NULL, LineID, FromBusID, ToBusID, ckt, BranchName
+            FROM branch
+            WHERE BranchID = ?;
+            """)
+        query = QSqlQuery()
+        query.prepare(sql)
+        query.addBindValue(BranchID)
+        query.exec_()
+        self.refresh_table()
+        return
+
+    def delete_row(self):
+        idxs = self.ui.tableView.selectionModel().selectedRows()
+        if len(idxs) != 1:
+            return
+        else:
+            index = idxs[0]
+        BranchID = self.ui.tableView.model().data(index)
+        sql = "DELETE FROM branch WHERE BranchID = ?"
+        query = QSqlQuery()
+        query.prepare(sql)
+        query.addBindValue(BranchID)
+        query.exec_()
+        self.refresh_table()
+        return
 
     def reset_filters(self):
         self.ui.filterBranch.setCurrentIndex(-1)
@@ -73,18 +118,25 @@ class MainWindow(QMainWindow):
         self.ui.filterEquipment.setText('')
 
     def setup_table(self):
+        # We have to subclass this model for advanced functions like disable editing
+        # on some rows/columns.
         model = QSqlRelationalTableModel()
+        model.setTable('branch')
+        model.setEditStrategy(QSqlTableModel.OnFieldChange)
+        model.setRelation(2, QSqlRelation('bus', 'BusID', 'BusName')) # FromBus
+        model.setRelation(3, QSqlRelation('bus', 'BusID', 'BusName')) # ToBus
+        model.select()
+
         # sql = "SELECT branch.BranchID, branch.BranchName, FromBusID, ToBusID FROM branch;"
 
         view = self.ui.tableView
         view.setModel(model)
+        view.setItemDelegate(QSqlRelationalDelegate(view))
         view.show()
         self.refresh_table()
 
-    def refresh_table(self, LineID=None, BranchID=None, BusID=None):
+    def refresh_table(self):
         tmodel = self.ui.tableView.model()
-        tmodel.setTable('branch')
-        tmodel.setEditStrategy(QSqlTableModel.OnFieldChange)
 
         index = self.ui.filterBranch.currentIndex()
         if index > -1:

@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21c47772-d088-4a41-918d-60ec131ef13c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.mytableview.py.swp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.sqlite" afterPath="$PROJECT_DIR$/example.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filter_table.py" afterPath="$PROJECT_DIR$/filter_table.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/make_db.py" afterPath="$PROJECT_DIR$/make_db.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql_example_ui.py" afterPath="$PROJECT_DIR$/sql_example_ui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql_example_ui.ui" afterPath="$PROJECT_DIR$/sql_example_ui.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update_combobox_smart.py" afterPath="$PROJECT_DIR$/update_combobox_smart.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,16 +20,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="complete.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/complete.py">
+            <file leaf-file-name="make_db.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/make_db.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="136">
-                    <caret line="8" column="98" lean-forward="false" selection-start-line="8" selection-start-column="98" selection-end-line="8" selection-end-column="98" />
-                    <folding />
+                  <state relative-caret-position="476">
+                    <caret line="28" column="42" lean-forward="false" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+                    <folding>
+                      <element signature="e#150#164#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -43,22 +44,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="make_db.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/make_db.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-              <folding>
-                <element signature="e#150#164#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="view_query.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view_query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="561">
               <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="e#38#59#0" expanded="true" />
@@ -67,26 +56,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_query.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/update_query.py">
+      <file leaf-file-name="filter_table.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filter_table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="21" />
+            <state relative-caret-position="17">
+              <caret line="1" column="51" lean-forward="true" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
               <folding>
-                <element signature="e#206#227#0" expanded="true" />
+                <element signature="e#250#271#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter_table.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/filter_table.py">
+      <file leaf-file-name="edit_table.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/edit_table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#197#218#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,7 +81,7 @@
       <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26316">
+            <state relative-caret-position="655">
               <caret line="1584" column="0" lean-forward="false" selection-start-line="1584" selection-start-column="0" selection-end-line="1584" selection-end-column="0" />
               <folding />
             </state>
@@ -112,25 +99,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FromBusID</find>
-      <find>sql</find>
-      <find>setQuery</find>
-      <find>Model</find>
-      <find>ItemIsEditable</find>
-      <find>QtCore</find>
-      <find>BranchName</find>
-      <find>Query</find>
-      <find>open</find>
       <find>QTableView</find>
       <find>currentIndex</find>
       <find>setData</find>
       <find>sql_example_ui</find>
-      <find>tableView</find>
       <find>setQu</find>
       <find>select</find>
       <find>QApplica</find>
       <find>FilteringCom</find>
       <find>Filterin</find>
+      <find>mbranches</find>
+      <find>setFilter</find>
+      <find>filter</find>
+      <find>proxy</find>
+      <find>tableView</find>
+      <find>prox</find>
+      <find>setQuery</find>
+      <find>MyDelegate</find>
+      <find>setup_branch_filter</find>
+      <find>update_bra</find>
+      <find>update_b</find>
+      <find>refresh_bra</find>
+      <find>setup_bra</find>
+      <find>LineID</find>
+      <find>query</find>
+      <find>update_li</find>
+      <find>line_changed</find>
+      <find>tmodel</find>
+      <find>sert</find>
+      <find>refresh_table</find>
+      <find>Model</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,17 +145,19 @@
         <option value="$PROJECT_DIR$/update_combobox.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/update_combobox_smart.py" />
-        <option value="$PROJECT_DIR$/complete.py" />
-        <option value="$PROJECT_DIR$/make_db.py" />
         <option value="$PROJECT_DIR$/sql_example_ui.py" />
+        <option value="$PROJECT_DIR$/complete.py" />
         <option value="$PROJECT_DIR$/filter_table.py" />
+        <option value="$PROJECT_DIR$/make_db.py" />
+        <option value="$PROJECT_DIR$/edit_table.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1173" />
+    <option name="y" value="2" />
     <option name="width" value="1399" />
-    <option name="height" value="1407" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -205,7 +205,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.filter_table">
+  <component name="RunManager" selected="Python.edit_table">
     <configuration default="false" name="update_query" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -219,24 +219,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="pyqt_db" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/update_query.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="view_query" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pyqt_db" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/view_query.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -291,6 +273,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="pyqt_db" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filter_table.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="edit_table" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyqt_db" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/edit_table.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -363,18 +363,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.update_query" />
-      <item index="1" class="java.lang.String" itemvalue="Python.view_query" />
-      <item index="2" class="java.lang.String" itemvalue="Python.update_combobox" />
-      <item index="3" class="java.lang.String" itemvalue="Python.update_combobox_smart" />
-      <item index="4" class="java.lang.String" itemvalue="Python.filter_table" />
+      <item index="1" class="java.lang.String" itemvalue="Python.update_combobox" />
+      <item index="2" class="java.lang.String" itemvalue="Python.update_combobox_smart" />
+      <item index="3" class="java.lang.String" itemvalue="Python.filter_table" />
+      <item index="4" class="java.lang.String" itemvalue="Python.edit_table" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.filter_table" />
-        <item index="1" class="java.lang.String" itemvalue="Python.update_combobox_smart" />
-        <item index="2" class="java.lang.String" itemvalue="Python.update_combobox" />
-        <item index="3" class="java.lang.String" itemvalue="Python.update_query" />
-        <item index="4" class="java.lang.String" itemvalue="Python.view_query" />
+        <item index="0" class="java.lang.String" itemvalue="Python.edit_table" />
+        <item index="1" class="java.lang.String" itemvalue="Python.filter_table" />
+        <item index="2" class="java.lang.String" itemvalue="Python.update_combobox_smart" />
+        <item index="3" class="java.lang.String" itemvalue="Python.update_combobox" />
+        <item index="4" class="java.lang.String" itemvalue="Python.update_query" />
       </list>
     </recent_temporary>
   </component>
@@ -395,7 +395,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1173" y="0" width="1399" height="1407" extended-state="0" />
+    <frame x="1173" y="2" width="1399" height="1416" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25018078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -406,7 +406,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39707017" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2856049" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -433,7 +433,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -485,7 +485,7 @@
         <state relative-caret-position="1122">
           <caret line="74" column="50" lean-forward="false" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
           <folding>
-            <element signature="e#274#295#0" expanded="true" />
+            <element signature="e#274#295#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -525,7 +525,7 @@
         <state relative-caret-position="782">
           <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
           <folding>
-            <element signature="e#274#295#0" expanded="true" />
+            <element signature="e#274#295#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,7 +565,7 @@
         <state relative-caret-position="782">
           <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
           <folding>
-            <element signature="e#274#295#0" expanded="true" />
+            <element signature="e#274#295#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -694,50 +694,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26316">
-          <caret line="1584" column="0" lean-forward="false" selection-start-line="1584" selection-start-column="0" selection-end-line="1584" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view_query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/update_combobox_smart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="e#274#295#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update_query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="21" />
-          <folding>
-            <element signature="e#206#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/make_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-          <folding>
-            <element signature="e#150#164#0" expanded="true" />
+            <element signature="e#274#295#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -750,6 +712,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="1584" column="0" lean-forward="false" selection-start-line="1584" selection-start-column="0" selection-end-line="1584" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/complete.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -758,13 +728,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/update_query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#206#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/filter_table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="51" lean-forward="true" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
           <folding>
-            <element signature="e#197#218#0" expanded="true" />
+            <element signature="e#250#271#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view_query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/make_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="42" lean-forward="false" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+          <folding>
+            <element signature="e#150#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/edit_table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
