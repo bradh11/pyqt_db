@@ -21,6 +21,7 @@ from PyQt5 import QtSql
 from PyQt5.QtSql import (QSqlQuery, QSqlQueryModel, QSqlRelationalTableModel, QSqlTableModel, QSqlRelation, QSqlRelationalDelegate)
 import sys
 from textwrap import dedent
+import os.path as osp
 
 BUS_LIST = dedent("""\
         SELECT bus.BusName, bus.BusID 
@@ -40,12 +41,41 @@ BUS_LIST = dedent("""\
         WHERE line.LineID = ?;
         """)
 
+
+class CustomTableView(QTableView):
+    def __init__(self):
+        super(CustomTableView, self).__init__()
+
+    def mousePressEvent(self, event):
+        self.clearSelection()
+        super(CustomTableView, self).mousePressEvent(event)
+
+class CustomQSqlRelationalTableModel(QSqlRelationalTableModel):
+    def __init__(self):
+        super(CustomQSqlRelationalTableModel, self).__init__()
+
+    def flags(self, index):
+        flags = super(CustomQSqlRelationalTableModel, self).flags(index)
+        if index.column() in (0, 1):
+            flags &= Qt.ItemIsEditable
+            flags |= Qt.ItemIsSelectable
+        elif index.column() in (2, 3, 4):
+            flags |= Qt.ItemIsEditable
+            # Editable columns
+        return flags
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = sql_example_ui.Ui_MainWindow()
         self.ui.setupUi(self)
 
+        if hasattr(sys, 'frozen'):
+            this_script = sys.executable
+        else:
+            this_script = sys.argv[0]
+
+        db_file = osp.join(osp.split(this_script)[0], 'example.sqlite')
         # Setup database
         db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
         db.setDatabaseName('example.sqlite')
@@ -73,6 +103,16 @@ class MainWindow(QMainWindow):
         self.ui.filterBus.currentIndexChanged.connect(self.refresh_table)
         self.ui.copyButton.clicked.connect(self.copy_row)
         self.ui.deleteButton.clicked.connect(self.delete_row)
+
+        self.ui.clearSelection.clicked.connect(self.ui.tableView.clearSelection)
+        # clicked only fires when a cell is selected
+        #self.ui.tableView.clicked.connect(self.table_mouse_press)
+
+    def table_mouse_press(self, event):
+
+        index = self.ui.tableView.indexAt(event.pos())
+        if not item.isValid():
+            self.ui.tableView.clearSelection()
 
     def copy_row(self):
         # Which row is selected
@@ -120,7 +160,8 @@ class MainWindow(QMainWindow):
     def setup_table(self):
         # We have to subclass this model for advanced functions like disable editing
         # on some rows/columns.
-        model = QSqlRelationalTableModel()
+        model = CustomQSqlRelationalTableModel()
+        #model = QSqlRelationalTableModel()
         model.setTable('branch')
         model.setEditStrategy(QSqlTableModel.OnFieldChange)
         model.setRelation(2, QSqlRelation('bus', 'BusID', 'BusName')) # FromBus
@@ -175,7 +216,7 @@ class MainWindow(QMainWindow):
             filter = " AND ".join(filters)
             tmodel.setFilter(filter)
 
-        # Instead of FromBusID show the BusName
+        # If we show LineName we have to filter by LineName
         tmodel.setRelation(2, QSqlRelation('bus', 'BusID', 'BusName'))
         tmodel.setRelation(3, QSqlRelation('bus', 'BusID', 'BusName'))
 
